@@ -15,6 +15,7 @@ public class EasyFastFood {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println ("escreveu nao leu o pai comeu");
         // TODO code application logic here
     }
     
