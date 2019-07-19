@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package easyfastfood;
+
+import easyfastfood.framework.DatabaseConnector;
+import easyfastfood.framework.Util;
 
 /**
  *
@@ -15,8 +13,9 @@ public class EasyFastFood {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println ("escreveu nao leu o pai comeu");
-        // TODO code application logic here
+        DatabaseConnector.getDatabaseConnector();
+        
+        System.out.println(Util.isValidCPF("098.531.276-95"));
     }
     
 }
