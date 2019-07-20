@@ -1,6 +1,8 @@
 package easyfastfood.framework;
 
+import java.text.ParseException;
 import java.util.InputMismatchException;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -9,7 +11,7 @@ import java.util.InputMismatchException;
 public class Util {
 
     public static boolean isValidCPF(String CPF) {
-        CPF = CPF.replace(".", "").replace("-","");
+        CPF = CPF.replace(".", "").replace("-", "");
         if (CPF.equals("00000000000")
                 || CPF.equals("11111111111")
                 || CPF.equals("22222222222") || CPF.equals("33333333333")
@@ -62,5 +64,20 @@ public class Util {
         } catch (InputMismatchException erro) {
             return (false);
         }
+    }
+
+    public static String formatCpf(String cpf) throws ParseException {
+        MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
+        cpf = cpf.replace(".", "").replace("-", "");
+        try {
+            if (cpf.length() == 11) {
+                cpfMask.setValueContainsLiteralCharacters(false);
+
+                return cpfMask.valueToString(cpf);
+            }
+        } catch (Exception e) {
+            return cpf;
+        }
+        return null;
     }
 }
