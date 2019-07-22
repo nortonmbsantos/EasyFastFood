@@ -5,6 +5,9 @@
  */
 package easyfastfood;
 
+import easyfastfood.products.Product;
+import easyfastfood.products.ProductBR;
+
 /**
  *
  * @author norto
@@ -15,8 +18,16 @@ public class EasyFastFood {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println ("escreveu nao leu o pai comeu");
-        // TODO code application logic here
+        Product p = new Product();
+        ProductBR pbr = new ProductBR();
+        p.setName ("a");
+        p.setPrice(0.01);
+        p.setDescription("a");
+        p.setStatus(true);
+ 
+        pbr.save(p);
+        System.out.println(pbr.save(p).getMessage());
+
     }
     
 }
