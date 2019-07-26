@@ -14,6 +14,7 @@ public class Product {
     private double price = 0.0;
     private String Description;
     private boolean Status;
+    private int id = 0;
     
     public String getName() {
         return name;
@@ -45,6 +46,14 @@ public class Product {
 
     public void setStatus(boolean Status) {
         this.Status = Status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

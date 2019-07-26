@@ -27,7 +27,9 @@ public class ProductBR {
         if (product.isStatus()== false ) {
             return new StandardizedDataResult("Produto inativo", -1, false);        
         }
-            
+        if (product.getId() <= 0  ){
+           return new StandardizedDataResult("Id invalido", -1, false); 
+        }    
         return new StandardizedDataResult("Salvo com sucesso", -1, true);
 
     }
